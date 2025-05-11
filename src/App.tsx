@@ -20,7 +20,7 @@ function App() {
 
   useEffect(() => {
     const d = getDate(date).replace(/-/g, '');
-    fetch(`https://tech-news.deno.dev?d=${d}`).then(async (res) => {
+    fetch(`https://slashdot.deno.dev?d=${d}`).then(async (res) => {
       if (!res) {
         return;
       }
