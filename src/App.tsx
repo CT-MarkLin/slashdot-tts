@@ -20,7 +20,7 @@ function App() {
 
   useEffect(() => {
     const d = getDate(date).replace(/-/g, '');
-    fetch(`https://slashdot.deno.dev?d=${d}`).then(async (res) => {
+    fetch(`https://supabase.hzc.pub/functions/v1/slashdot?d=${d}`).then(async (res) => {
       if (!res) {
         return;
       }
