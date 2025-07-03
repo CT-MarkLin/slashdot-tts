@@ -32,7 +32,7 @@ export const Audio: FC<IAudio> = ({ data, index, onEnd }) => {
       return;
     }
     console.log({ snippets, readIndex });
-    const url = `https://edge-tts.deno.dev/?text=${snippets[readIndex]}`;
+    const url = `https://supabase.hzc.pub/functions/v1/edge-tts?text=${snippets[readIndex]}`;
     const audioObj = audioRef.current;
     // audioObj.pause();
     audioObj.src = url;
