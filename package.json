@@ -12,6 +12,7 @@
   "dependencies": {
     "antd": "^5.8.4",
     "idb-keyval": "^6.2.1",
+    "edge-tts-universal": "^1.2.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
