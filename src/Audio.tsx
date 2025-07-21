@@ -1,4 +1,5 @@
 import { FC, useEffect, useRef, useState } from 'react';
+import {ttsApi} from './tts'
 
 interface IAudio {
   data: string;
@@ -27,17 +28,19 @@ export const Audio: FC<IAudio> = ({ data, index, onEnd }) => {
     }, 1000)
     return () => clearInterval(cache.timer)
   }, [audioRef])
-  useEffect(() => {
+  useEffect(async () => {
     if (!data || !audioRef.current) {
       return;
     }
     console.log({ snippets, readIndex });
-    const url = `https://supabase.hzc.pub/functions/v1/edge-tts?text=${snippets[readIndex]}`;
+    const audioBlob = await ttsApi(`${snippets[readIndex]}`)
+    const audioUrl = URL.createObjectURL(audioBlob);
+    // const url = `https://supabase.hzc.pub/functions/v1/edge-tts?text=${snippets[readIndex]}`;
     // const url = `https://fetch.hzc.pub/?url=https://deno-tts.deno.dev?text=${snippets[readIndex]}`;
     
     const audioObj = audioRef.current;
     // audioObj.pause();
-    audioObj.src = url;
+    audioObj.src = audioUrl;
   }, [audioRef, snippets, readIndex]);
 
   useEffect(() => {
