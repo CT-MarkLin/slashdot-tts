@@ -34,10 +34,10 @@ export const Audio: FC<IAudio> = ({ data, index, onEnd }) => {
         return;
       }
       console.log({ snippets, readIndex });
-      const audioBlob = await ttsApi(`${snippets[readIndex]}`)
-      const audioUrl = URL.createObjectURL(audioBlob);
+      // const audioBlob = await ttsApi(`${snippets[readIndex]}`)
+      // const audioUrl = URL.createObjectURL(audioBlob);
       // const url = `https://supabase.hzc.pub/functions/v1/edge-tts?text=${snippets[readIndex]}`;
-      // const url = `https://fetch.hzc.pub/?url=https://deno-tts.deno.dev?text=${snippets[readIndex]}`;
+      const url = `https://tts1.hzc.pub?text=${snippets[readIndex]}`;
       
       const audioObj = audioRef.current;
       // audioObj.pause();
