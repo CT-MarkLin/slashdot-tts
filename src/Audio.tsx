@@ -37,7 +37,7 @@ export const Audio: FC<IAudio> = ({ data, index, onEnd }) => {
       // const audioBlob = await ttsApi(`${snippets[readIndex]}`)
       // const audioUrl = URL.createObjectURL(audioBlob);
       // const url = `https://supabase.hzc.pub/functions/v1/edge-tts?text=${snippets[readIndex]}`;
-      const url = `https://tts1.hzc.pub?text=${snippets[readIndex]}`;
+      const audioUrl = `https://tts1.hzc.pub?text=${snippets[readIndex]}`;
       
       const audioObj = audioRef.current;
       // audioObj.pause();
